@@ -3,7 +3,7 @@ import {
   ComponentType,
   LazyExoticComponent,
   lazy as lazyLoad,
-  ReactNode,
+  ReactElement,
 } from 'react';
 
 const Home = lazyLoad(() => import('pages/Home'));
@@ -25,7 +25,7 @@ export type PathParams<P extends Path> = ExtractRouteParams<P>;
 
 export type RoutingProps = {
   path: Path;
-  component: LazyExoticComponent<() => ReactNode> | ComponentType;
+  component: LazyExoticComponent<() => ReactElement> | ComponentType;
   routeType: 'publicOnly' | 'private';
 };
 
